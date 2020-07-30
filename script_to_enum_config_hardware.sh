@@ -4,7 +4,7 @@
 sudo lshw > info_hardware.txt
 grep "memory" -A 4  info_hardware.txt | head -n 5 > ram.txt
 grep "cpu" -A 2 info_hardware.txt  > cpu.txt
-grep "product" cpu.txt > cpu2.txt 
+grep "product" cpu.txt  |  cut -d":" -f3 > cpu2.txt 
 
 grep "description" -A 2 info_hardware.txt | head -n 3 | cut -d":" -f1,2  > computer_name_and_brand.txt
 
